@@ -65,6 +65,17 @@ export class ProjectDetailsComponent implements OnInit {
         });
     }
 
+    deleteTask(task: Task) {
+        this.notificationService.confirm('Delete Task?', 'It will be removed from this list.').then((result) => {
+            if (result.isConfirmed) {
+                this.projectService.deleteTask(task.id).subscribe(() => {
+                    this.tasks = this.tasks.filter(t => t.id !== task.id);
+                    this.notificationService.toast('Task deleted', 'info');
+                });
+            }
+        });
+    }
+
     activateProject() {
         if (!this.project) return;
         this.notificationService.confirm('Activate Project?', 'This will optimize the project workspace.').then((result) => {

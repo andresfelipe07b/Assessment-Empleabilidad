@@ -48,6 +48,10 @@ export class ProjectService {
         return this.http.patch<Task>(`${this.apiUrl}/tasks/${taskId}/complete`, {});
     }
 
+    deleteTask(taskId: string): Observable<void> {
+        return this.http.delete<void>(`${this.apiUrl}/tasks/${taskId}`);
+    }
+
 
     getTasks(projectId: string): Observable<Task[]> {
         return this.http.get<Task[]>(`${this.apiUrl}/projects/${projectId}/tasks`);

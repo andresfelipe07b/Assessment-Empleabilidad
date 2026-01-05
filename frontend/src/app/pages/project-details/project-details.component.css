@@ -51,7 +51,6 @@
     margin-bottom: 2rem;
     display: flex;
     gap: 1.5rem;
-    /* Increased spacing as requested */
     align-items: center;
 }
 
@@ -107,7 +106,6 @@
     padding: 2rem;
 }
 
-/* Responsive Action Button */
 .btn-activate {
     display: flex;
     align-items: center;
@@ -121,9 +119,7 @@
 
     .btn-activate {
         padding: 0.5rem;
-        /* Square aspect */
         border-radius: 50%;
-        /* Circle option or just small square */
         border-radius: var(--radius);
         min-width: 40px;
         min-height: 40px;
@@ -132,6 +128,34 @@
 
     .header-content {
         align-items: flex-start;
-        /* Align top if title wraps */
     }
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+}
+
+.btn-delete:hover {
+    color: #ef4444;
+    background-color: #fee2e2;
 }

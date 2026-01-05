@@ -38,9 +38,6 @@ export class LoginComponent {
                     this.notificationService.success('Welcome!', 'Registration successful. Please login.');
                 },
                 error: (err) => {
-                    // Use notification for errors too for consistency, or keep inline error? 
-                    // User asked to remove the alert. I'll replace the success alert. 
-                    // I will also show a toast for error but keep the inline text as fallback.
                     this.error = 'Registration failed. ' + (err.error?.message || '');
                     this.notificationService.error('Registration Failed', err.error?.message || 'Please try again.');
                 }

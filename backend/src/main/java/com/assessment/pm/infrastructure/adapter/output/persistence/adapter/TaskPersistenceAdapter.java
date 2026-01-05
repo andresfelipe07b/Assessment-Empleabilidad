@@ -35,7 +35,8 @@ public class TaskPersistenceAdapter implements TaskRepositoryPort {
 
     @Override
     public List<Task> findByProjectId(UUID projectId) {
-        return jpaTaskRepository.findByProjectId(projectId).stream().map(this::toDomain).collect(Collectors.toList());
+        return jpaTaskRepository.findByProjectIdAndDeletedFalse(projectId).stream().map(this::toDomain)
+                .collect(Collectors.toList());
     }
 
     @Override
