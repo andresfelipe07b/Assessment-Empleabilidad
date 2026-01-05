@@ -100,15 +100,15 @@ classDiagram
 
 ### Use Case Diagram
 ```mermaid
-usecaseDiagram
-    actor User
-    usecase "Register / Login" as UC1
-    usecase "Create Project" as UC2
-    usecase "View Projects" as UC3
-    usecase "View Project Details" as UC4
-    usecase "Create Task" as UC5
-    usecase "Complete Task" as UC6
-    usecase "Delete Task" as UC7
+graph LR
+    User((User))
+    UC1(Register / Login)
+    UC2(Create Project)
+    UC3(View Projects)
+    UC4(View Project Details)
+    UC5(Create Task)
+    UC6(Complete Task)
+    UC7(Delete Task)
 
     User --> UC1
     User --> UC2
