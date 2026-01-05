@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<div class="container dashboard-container">
+    <div class="header">
+        <h1>My Projects</h1>
+    </div>
+
+    <app-loader *ngIf="loading"></app-loader>
+
+    <div *ngIf="!loading">
+        <div class="create-section card">
+            <h3>Create New Project</h3>
+            <div class="input-group">
+                <input type="text" [(ngModel)]="newProjectName" placeholder="Project Name" class="input-field"
+                    (keyup.enter)="createProject()">
+                <button (click)="createProject()" class="btn btn-primary" [disabled]="!newProjectName">Create</button>
+            </div>
+        </div>
+
+        <div class="project-grid">
+            <div *ngFor="let project of projects" class="card project-card" [routerLink]="['/projects', project.id]">
+                <div class="project-header">
+                    <h3>{{ project.name }}</h3>
+                    <span class="status-badge" [class.active]="project.status === 'ACTIVE'">{{ project.status }}</span>
+                </div>
+                <p class="manage-text">Manage Project &rarr;</p>
+            </div>
+        </div>
+    </div>
