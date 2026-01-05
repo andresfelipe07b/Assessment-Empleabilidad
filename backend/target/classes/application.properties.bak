@@ -1,0 +1,25 @@
+server.port=8081
+
+# Database Configuration (Supabase)
+spring.datasource.url=jdbc:postgresql://aws-1-us-east-1.pooler.supabase.com:6543/postgres?prepareThreshold=0&preparedStatementCacheQueries=0&preferQueryMode=simple
+spring.datasource.username=postgres.lssqoyjaenhayhbxjujb
+spring.datasource.password=dCW3HRNKak60d0mg
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# JWT
+jwt.secret=ThereIsNoSecretsThereIsNoSecretsThereIsNoSecrets ThereIsNoSecretsThereIsNoSecretsThereIsNoSecrets
+jwt.expiration=86400000
+
+# Swagger
+springdoc.api-docs.path=/v3/api-docs
+springdoc.swagger-ui.path=/swagger-ui.html
+
+server.error.include-message=always
+server.error.include-binding-errors=always
+server.error.include-stacktrace=always
+server.error.include-exception=true
